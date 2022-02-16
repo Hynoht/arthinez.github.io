@@ -1,0 +1,424 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    background: #000;
+    font-family: sans-serif, serif;
+    color: #000;
+    /* font: normal 16px system-ui,Roboto,Arial,sans-serif; */
+    font-family: Arial,sans-serif;
+}
+
+.container {
+    height: 100vh;
+}
+
+canvas {
+    display: block;
+    width: 1260px;
+    height: 800px;
+    top: -25px;
+    position: absolute;
+    z-index: -1;
+}
+
+#nav {
+    background:  #282828;
+}
+
+#header {
+    padding: 5px 5px;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: auto;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 5em;
+}
+
+
+header ul li {
+    text-align: center;
+    width: 150px;
+    color: #999;
+    line-height: 3em;
+    font-family: sans-serif;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+
+#log {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.log{
+    border-radius: 5px;
+    background-color: rgb(0, 174, 255);
+    color: #fff;
+    padding: 9px 2px;
+}
+
+.links {
+    display: none;
+    transition: 1s;
+}
+.links.active{
+    display: block;
+    width:200px;
+    height: 270px;
+    position: absolute;
+    background: #222;
+    z-index: 6;
+    padding: 5px 5px;
+    transition: 1s;
+}
+
+.links_{
+    margin: 10px 10px;
+}
+
+.links_ li {
+    margin-bottom: 20px;
+}
+
+.links_ li:hover a {
+    color:#fff;
+    text-decoration: none;
+}
+
+.links.active{
+    animation: appear 1s forwards ease ;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(1px);
+    }
+}
+
+.links.active li {
+    animation: appears 2s forwards ease;
+}
+
+@keyframes appears {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+ul {
+    list-style: none;
+}
+
+a {
+    color:#999;
+    text-decoration: none;
+}
+
+header ul li a {
+    color:#999;
+    text-decoration: none;
+}
+
+header ul li:hover a{
+    color: #fff;
+}
+header ul li.active {
+    border-bottom: 2px solid #7451eb;
+}
+
+.list {
+    width:2em;
+    height: 50px;
+    z-index: 3;
+    cursor: pointer;
+    padding-left: 5px;
+    display: none;
+}
+
+.menu {
+    position: absolute;
+    top:30px;
+    width: 1.5em;
+    height: 2px;
+    background: #fff;
+    display: none;
+    transition: .1s;
+}
+
+.menu::after, .menu::before {
+    content: '';
+    position: absolute;
+    width: 1.5em;
+    height: 2px;
+    background: #fff;
+    transition: .1s;
+}
+
+.menu::after {
+    transform: translateY(10px);
+}
+
+.menu::before {
+    transform: translateY(-10px);
+}
+
+.list.active .menu{
+    transform: rotate(360deg);
+    background: transparent;
+}
+
+.list.active .menu::after{
+    transform: translateY(0) rotate(-45deg);
+}
+
+.list.active .menu::before{
+    transform: translateY(0) rotate(45deg);
+}
+
+#subscribe,.subscribe , .contactMe a {
+    color: #fff;
+    font-size: 16px;
+    background: #f9004d;
+    outline: none;
+    border-radius: 30px;
+    padding: 10px 5px;
+    cursor: pointer;
+    border: 2px solid #f9004d;
+}
+
+#containes {
+    position: relative;
+    max-width: 400px;
+    color: #fff;
+    transform: translate( 5em ,18em);
+}
+h1 {
+    margin: 20px 0 20px;
+    font-size: 40px;
+}
+
+span {
+    color: rgb(0, 174, 255);
+}
+
+.propos {
+    width: 100%;
+    padding: 100px 0;
+    background-color: #111;
+}
+
+.propos img {
+    height: auto;
+    width: 430px;
+}
+
+.aboutMe{
+    width: 450px;
+
+}
+
+.aboutMe h2 {
+    color: #fff;
+    font-size: 50px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.aboutMe h5 {
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+.aboutMe p {
+    color: #eee;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+.main {
+    width: 1100px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.service, .contact {
+    width: 100%;
+    padding: 100px 0;
+    background-color: #000;
+}
+
+.mains {
+    width: 1100px;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    color: #ccc;
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+.mainMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.card {
+    height: 250px;
+    width: 335px;
+    padding: 50px 25px;
+    margin: 15px;
+    text-align: center;
+    color: #fff;
+    background: #111;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 5px;
+}
+
+.contact {
+    min-height: 350px;
+    background: #111;
+}
+
+.contactMe {
+    width: 1100px;
+    max-width: 95%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5em 0;
+}
+
+@media screen and (max-width: 380px){
+    .propos, .contact, .service {
+        width: 375px;
+    }
+    .propos img {
+        width: 300px;
+    }
+    .aboutMe {
+        width: 320px;
+    }
+    #containes {
+        transform: translate(3em, 12em);
+        max-width: 320px;
+    }
+    .mainMenu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width:380px) and (max-width: 480px){
+    .propos, .contact, .service {
+        width: 568px;
+    }
+    #containes {
+        transform: translate(3em, 1em);
+    }
+}
+
+@media screen and (max-width: 610px) {
+    #list {
+        display: none;
+    }
+    .list {
+        display: block;
+    }
+    header ul {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .menu {
+        display: block;
+    }
+    section{
+        padding: 0;
+    }
+    .wel{
+        margin:3em 0;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+    .mainMenu {
+        display: flex;
+        flex-wrap:wrap;
+    }
+}
+
+#can {
+    position: relative;
+    z-index: 0;
+    width: 350px;
+    height: 250px;
+}
+.card {
+    overflow: hidden;
+}
+
+.p {
+    z-index: 6;
+}
+@media screen and (min-width:610px) and (max-width:800px) {
+    header ul li {
+        width: 110px;
+    }
+    header ul{
+        margin-left: 1em;
+    }
+    .propos img {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 950px){
+    header ul{
+        margin-left: 1em;
+    }
+}
